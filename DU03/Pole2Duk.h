@@ -152,15 +152,22 @@ Pole2Duk* Pole2Duk::operator+(const Pole2Duk m1)
 
 Pole2Duk* Pole2Duk::operator*(const Pole2Duk m1)
 {
+
+
     if (n != m1.m)
         throw ("Wrong matrix dimensions. Number of rows of the first matrix must be equal to the number of columns of the second matrix.");
-    Pole2Duk *m2 = new Pole2Duk(m, n);
-    for (int i = 0; i < m; i++)
+
+    int m_new = m;
+    int n_new = m1.n;
+    int K = n;
+
+    Pole2Duk *m2 = new Pole2Duk(m_new, n_new);
+    for (int i = 0; i < m_new; i++)
     {
-        for (int j = 0; j < n; j++)
+        for (int j = 0; j < n_new; j++)
         {
             int value = 0;
-            for (int k = 0; k < n; k++)
+            for (int k = 0; k < K; ++k)
                 value += GetValue(i, k) * m1.GetValue(k, j);
             m2->SetValue(value, i, j);
         }
@@ -199,7 +206,6 @@ void Pole2Duk::realoc(int m_new, int n_new)
     p = p_new;
     this->m = m_new;
     this->n = n_new;
-    //cout << "dimensions: " << m << " " << n << endl;
 }
 
 // --

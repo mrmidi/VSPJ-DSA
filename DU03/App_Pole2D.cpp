@@ -26,7 +26,6 @@ void InitMe(Pole2Duk &pole)
     int n = pole.PocetRadku();
     int m = pole.PocetSloupcu();
 
-
     // init
     for (int i = 0; i < n; i++)
         for (int j = 0; j < m; j++)
@@ -43,9 +42,9 @@ void PrintSplit()
 
 void ukazka2()
 {
-    Pole2Duk *pole = new Pole2Duk(4, 3); // pole(4, 3);
-    Pole2Duk *multiplyme = new Pole2Duk(3, 4); // pole(3, 4) have same number of columns for multiplication
-    Pole2Duk *summe = new Pole2Duk(4, 3); // pole(4, 3) equal size for sum
+    Pole2Duk *pole = new Pole2Duk(2, 2); // pole(4, 3);
+    Pole2Duk *multiplyme = new Pole2Duk(2, 2); // pole(3, 4) have same number of columns for multiplication
+    Pole2Duk *summe = new Pole2Duk(2, 2); // pole(4, 3) equal size for sum
 
 
     //Error handling testing
